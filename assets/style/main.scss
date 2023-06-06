@@ -158,8 +158,10 @@ section#banner {
 	padding: 0 100px 100px 100px;
 
 	.item__card__wrapper {
-		gap: 23px;
-		flex-wrap: wrap;
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		row-gap: 2em;
+		column-gap: 1.5em;
 
 		.item {
 			cursor: pointer;
@@ -168,11 +170,6 @@ section#banner {
 			overflow: hidden;
 			outline: none;
 			border: 3px solid transparent;
-
-			img {
-				width: 190px;
-				height: 265px;
-			}
 
 			.img-text {
 				position: absolute;
@@ -463,6 +460,12 @@ section#banner {
 					color: white;
 				}
 
+				.item-checkout-wrapper {
+					display: grid;
+					grid-template-columns: repeat(3, 1fr);
+					gap: 1rem;
+				}
+
 				input {
 					width: 100%;
 					border-radius: 6px;
@@ -504,7 +507,7 @@ section#banner {
 					}
 
 					.choice__detail {
-						gap: 100px;
+						gap: 90px;
 					}
 
 					.item_details {

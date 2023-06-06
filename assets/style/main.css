@@ -129,8 +129,11 @@ section#banner .slides-item img {
   padding: 0 100px 100px 100px;
 }
 #main-content .item__card__wrapper {
-  gap: 23px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  row-gap: 2em;
+  -moz-column-gap: 1.5em;
+       column-gap: 1.5em;
 }
 #main-content .item__card__wrapper .item {
   cursor: pointer;
@@ -139,10 +142,6 @@ section#banner .slides-item img {
   overflow: hidden;
   outline: none;
   border: 3px solid transparent;
-}
-#main-content .item__card__wrapper .item img {
-  width: 190px;
-  height: 265px;
 }
 #main-content .item__card__wrapper .item .img-text {
   position: absolute;
@@ -382,6 +381,11 @@ section#banner .slides-item img {
   font-size: 16px;
   color: white;
 }
+#main-content .row .box .box__content .item-checkout-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
 #main-content .row .box .box__content input {
   width: 100%;
   border-radius: 6px;
@@ -421,7 +425,7 @@ section#banner .slides-item img {
   transition: 0.1s ease-in-out all 0.1s;
 }
 #main-content .row .box .box__content .choice__item .choice__detail {
-  gap: 100px;
+  gap: 90px;
 }
 #main-content .row .box .box__content .choice__item .item_details h5 {
   font-weight: 600;
