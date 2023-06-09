@@ -156,7 +156,6 @@ section#banner .slides-item img {
   width: 100%;
   height: 100%;
   padding: 0 100px 100px 100px;
-  overflow: hidden;
 }
 @media screen and (max-width: 900px) {
   #main-content {
@@ -216,10 +215,20 @@ section#banner .slides-item img {
   font-size: 18px;
   color: white;
 }
+@media screen and (max-width: 600px) {
+  #main-content .item__card__wrapper .item:hover .img-text .brand {
+    font-size: 12px;
+  }
+}
 #main-content .item__card__wrapper .item:hover .img-text .name {
   font-weight: 700;
   font-size: 18px;
   color: #ffe500;
+}
+@media screen and (max-width: 600px) {
+  #main-content .item__card__wrapper .item:hover .img-text .name {
+    font-size: 10px;
+  }
 }
 #main-content .search {
   margin-top: 29px;
@@ -275,6 +284,9 @@ section#banner .slides-item img {
 }
 #main-content section#navigate-topup {
   margin-top: 64px;
+}
+#main-content section#navigate-topup .scroll-wrapper {
+  overflow: auto;
 }
 #main-content section#navigate-topup .scrollbar-wrapper {
   margin-left: 20px;
