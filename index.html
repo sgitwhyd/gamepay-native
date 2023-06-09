@@ -38,6 +38,15 @@
 		<header>
 			<nav class="justify-content-between align-items-center hstack">
 				<div class="hstack gap-1">
+					<a
+						class="btn btn-primary btn-mobile"
+						data-bs-toggle="offcanvas"
+						href="#offcanvasExample"
+						role="button"
+						aria-controls="offcanvasExample"
+					>
+						☰
+					</a>
 					<img src="./assets/images/logo.png" alt="logo" />
 					<div class="justify-content-between align-items-center hstack">
 						<ul class="navlinks__wrapper hstack">
@@ -415,6 +424,47 @@
 				© 2023 PT. Digital Gempay Store All rights reserved.
 			</p>
 		</footer>
+
+		<div
+			class="offcanvas offcanvas-start"
+			tabindex="-1"
+			id="offcanvasExample"
+			aria-labelledby="offcanvasExampleLabel"
+		>
+			<div class="offcanvas-header">
+				<h5 class="offcanvas-title" id="offcanvasExampleLabel">
+					<img src="./assets/images/logo.png" alt="logo" />
+				</h5>
+				<div
+					type="button"
+					class="text-reset close-btn"
+					data-bs-dismiss="offcanvas"
+					aria-label="Close"
+				>
+					X
+				</div>
+			</div>
+			<div class="offcanvas-body">
+				<div>
+					<div class="navlink-mobile-wrapper">
+						<ul>
+							<li>
+								<a href="#">Home</a>
+							</li>
+							<li>
+								<a href="#">Cek Transaksi</a>
+							</li>
+							<li>
+								<a href="#"> Daftar Harga </a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="navbutton__wrapper vstack gap-3">
+					<a class="btn" href="#">Daftar</a><button class="btn">Masuk</button>
+				</div>
+			</div>
+		</div>
 
 		<script type="module">
 			import Swiper from "https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.esm.browser.min.js";

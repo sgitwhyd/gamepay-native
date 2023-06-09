@@ -22,19 +22,35 @@ body {
 header {
   background: #001428;
   color: white;
-  padding: 10px 100px;
+  padding: 10px 20px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 1023px) {
   header {
-    display: none;
+    padding: 10px 100px;
   }
 }
 header nav img {
   height: 56px;
 }
+@media screen and (max-width: 1024px) {
+  header nav img {
+    height: 32px;
+    margin-left: 12px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  header nav .btn-mobile {
+    display: none;
+  }
+}
 header nav .navlinks__wrapper {
   gap: 56px;
   margin-bottom: 0;
+}
+@media screen and (max-width: 1024px) {
+  header nav .navlinks__wrapper {
+    display: none;
+  }
 }
 header nav .navlinks__wrapper li {
   list-style: none;
@@ -54,6 +70,11 @@ header nav .navlinks__wrapper li a.active {
   text-underline-offset: 30px;
   -webkit-text-decoration-skip-ink: none;
           text-decoration-skip-ink: none;
+}
+@media screen and (max-width: 1024px) {
+  header nav .navbutton__wrapper {
+    display: none;
+  }
 }
 header nav .navbutton__wrapper a {
   color: white;
@@ -821,4 +842,69 @@ footer .row .footer__menu__wrapper ul li a:hover {
     position: sticky;
     bottom: 0;
   }
+}
+
+.offcanvas {
+  background-color: #001428;
+}
+
+.offcanvas-header {
+  border-bottom: 1px solid #002c58;
+}
+.offcanvas-header img {
+  height: 1.7rem;
+}
+.offcanvas-header .close-btn {
+  color: white !important;
+  font-size: 1.5rem;
+}
+
+.offcanvas-body {
+  padding: 0;
+}
+.offcanvas-body .navlink-mobile-wrapper {
+  padding: 1rem;
+  border-bottom: 1px solid #002c58;
+}
+.offcanvas-body .navlink-mobile-wrapper ul {
+  list-style: none;
+}
+.offcanvas-body .navlink-mobile-wrapper ul li {
+  padding: 0.5rem 0;
+  font-weight: 700;
+}
+.offcanvas-body .navlink-mobile-wrapper ul li a {
+  color: white;
+  text-decoration: none;
+}
+.offcanvas-body .navlink-mobile-wrapper ul li a:hover {
+  color: #ffe500;
+}
+.offcanvas-body .navlink-mobile-wrapper ul li a.active {
+  color: #ffe500;
+  text-decoration: underline;
+  text-decoration-color: #ffe500;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 30px;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+}
+.offcanvas-body .navbutton__wrapper {
+  padding: 1rem;
+}
+.offcanvas-body .navbutton__wrapper a {
+  color: white;
+  text-decoration: none;
+}
+.offcanvas-body .navbutton__wrapper button {
+  background: #0a4d68;
+  border: 2px solid #ffe500;
+  border-radius: 6px;
+  color: #05bfdb;
+  padding: 10px 30px;
+}
+.offcanvas-body .navbutton__wrapper button:hover {
+  background: #ffe500;
+  color: #0a4d68;
+  border: 2px solid #0a4d68;
 }/*# sourceMappingURL=main.css.map */
