@@ -33,6 +33,10 @@ header {
 	color: white;
 	padding: 10px 100px;
 
+	@media screen and (max-width: 768px) {
+		display: none;
+	}
+
 	nav {
 		img {
 			height: 56px;
@@ -91,6 +95,10 @@ header {
 	position: relative;
 	height: 340px;
 
+	@media screen and (max-width: 768px) {
+		height: 140px;
+	}
+
 	.flow {
 		width: 100%;
 		height: 100%;
@@ -117,6 +125,11 @@ section#banner {
 	align-items: center;
 	padding: 0 50px;
 
+	@media screen and (max-width: 700px) {
+		height: fit-content;
+		padding: 50px 20px;
+	}
+
 	.button-prev,
 	.button-next {
 		display: flex;
@@ -128,6 +141,10 @@ section#banner {
 		box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
 		border-radius: 9999px;
 		cursor: pointer;
+
+		@media screen and (max-width: 700px) {
+			display: none;
+		}
 
 		img {
 			width: 24px;
@@ -147,6 +164,11 @@ section#banner {
 		img {
 			width: 90%;
 			height: 432px;
+
+			@media screen and (max-width: 700px) {
+				width: 100%;
+				height: 100%;
+			}
 		}
 	}
 }
@@ -156,12 +178,31 @@ section#banner {
 	width: 100%;
 	height: 100%;
 	padding: 0 100px 100px 100px;
+	overflow: hidden;
+
+	@media screen and (max-width: 900px) {
+		padding: 0 20px 100px 20px;
+	}
+
+	.main-col {
+		@media screen and (max-width: 768px) {
+			row-gap: 39px;
+		}
+	}
 
 	.item__card__wrapper {
 		display: grid;
 		grid-template-columns: repeat(6, 1fr);
 		row-gap: 2em;
 		column-gap: 1.5em;
+
+		@media screen and (max-width: 768px) {
+			grid-template-columns: repeat(4, 1fr);
+		}
+
+		@media screen and (max-width: 500px) {
+			grid-template-columns: repeat(3, 1fr);
+		}
 
 		.item {
 			cursor: pointer;
@@ -228,6 +269,10 @@ section#banner {
 			border: 2px solid $text-primary-color;
 			border-radius: 6px;
 
+			@media screen and (max-width: 500px) {
+				width: 100%;
+			}
+
 			&::placeholder {
 				font-size: 12px;
 				color: white;
@@ -265,16 +310,16 @@ section#banner {
 	section#navigate-topup {
 		margin-top: 64px;
 
-		ul {
+		.scrollbar-wrapper {
 			margin-left: 20px;
 			padding-left: 0px;
 			border-bottom: 1px solid $secondary-color;
 			padding-bottom: 15px;
 			margin-bottom: 44px;
-
-			li {
-				list-style: none;
-
+			display: flex;
+			overflow-x: scroll;
+			width: 700px;
+			.scrollbar-item {
 				a {
 					text-decoration: none;
 					color: white;
@@ -451,6 +496,35 @@ section#banner {
 				margin-top: 32px;
 			}
 
+			.btn-apply {
+				background: #f97316;
+				height: 40px;
+				border-radius: 6px;
+				padding: 8px 17px;
+				border: none;
+				font-weight: 600;
+				font-size: 12px;
+				color: white;
+			}
+
+			.btn-increment {
+				width: 40px;
+				height: 40px;
+				border: none;
+				background: #c3c9cc;
+				border-radius: 6px;
+				font-size: 20px;
+			}
+
+			.btn-decrement {
+				font-size: 20px;
+				width: 40px;
+				height: 40px;
+				border: none;
+				background: #c3c9cc;
+				border-radius: 6px;
+			}
+
 			.box__content {
 				padding: 0 24px;
 
@@ -464,6 +538,14 @@ section#banner {
 					display: grid;
 					grid-template-columns: repeat(3, 1fr);
 					gap: 1rem;
+
+					@media screen and (max-width: 900px) {
+						grid-template-columns: repeat(2, 1fr);
+					}
+
+					@media screen and (max-width: 435px) {
+						grid-template-columns: repeat(1, 1fr);
+					}
 				}
 
 				input {
@@ -506,10 +588,6 @@ section#banner {
 						transition: 0.1s ease-in-out all 0.1s;
 					}
 
-					.choice__detail {
-						gap: 90px;
-					}
-
 					.item_details {
 						h5 {
 							font-weight: 600;
@@ -528,6 +606,11 @@ section#banner {
 					img {
 						width: 48px;
 						height: 48px;
+
+						@media screen and (max-width: 768px) {
+							width: 32px;
+							height: 32px;
+						}
 					}
 				}
 
@@ -539,35 +622,6 @@ section#banner {
 						font-size: 16px;
 					}
 				}
-
-				.btn-apply {
-					background: #f97316;
-					height: 40px;
-					border-radius: 6px;
-					padding: 8px 17px;
-					border: none;
-					font-weight: 600;
-					font-size: 12px;
-					color: white;
-				}
-
-				.btn-increment {
-					width: 40px;
-					height: 40px;
-					border: none;
-					background: #c3c9cc;
-					border-radius: 6px;
-					font-size: 20px;
-				}
-
-				.btn-decrement {
-					font-size: 20px;
-					width: 40px;
-					height: 40px;
-					border: none;
-					background: #c3c9cc;
-					border-radius: 6px;
-				}
 			}
 		}
 	}
@@ -577,6 +631,10 @@ footer {
 	padding: 0 100px 20px 100px;
 	background: $footer-main-backgroud;
 	margin-top: -1px;
+
+	@media screen and (max-width: 768px) {
+		padding: 0 20px 20px 20px;
+	}
 
 	.footer-copyright {
 		margin-top: 30px;
@@ -654,10 +712,16 @@ footer {
 	img {
 		position: absolute;
 		width: 281px;
-		height: 282px;
 		border-radius: 12px;
 		left: 170px;
 		bottom: -25px;
+
+		@media screen and (max-width: 768px) {
+			width: 100%;
+			max-width: 15rem;
+
+			left: 30px;
+		}
 	}
 }
 
@@ -784,9 +848,18 @@ footer {
 				border-top: 2px solid $secondary-color;
 				padding: 50px 0;
 
+				.accordion-item-wrapper {
+					display: grid;
+					grid-template-columns: repeat(3, 1fr);
+
+					@media screen and (max-width: 900px) {
+						grid-template-columns: repeat(2, 1fr);
+					}
+				}
+
 				.accordion-item {
 					padding: 6px 10px;
-					width: 181px;
+					width: 100%;
 					background: #ffffff;
 					border-radius: 10px;
 					cursor: pointer;
@@ -830,7 +903,35 @@ footer {
 
 			img {
 				width: 48px;
+				aspect-ratio: 6/2;
+
+				@media screen and (max-width: 768px) {
+					width: 2rem;
+				}
 			}
 		}
+	}
+}
+
+.desktop-item {
+	display: block;
+
+	@media screen and (max-width: 435px) {
+		display: none;
+	}
+}
+
+.mobile-item {
+	display: none;
+
+	@media screen and (max-width: 768px) {
+		display: block;
+	}
+}
+
+.position-sticky-mobile {
+	@media screen and (max-width: 768px) {
+		position: sticky;
+		bottom: 0;
 	}
 }
