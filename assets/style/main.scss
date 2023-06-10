@@ -350,8 +350,12 @@ section#banner {
 			padding-bottom: 15px;
 			margin-bottom: 44px;
 			display: flex;
-			overflow-x: scroll;
-			width: 700px;
+
+			@media screen and (max-width: 768px) {
+				overflow-x: scroll;
+				width: 700px;
+			}
+
 			.scrollbar-item {
 				a {
 					text-decoration: none;

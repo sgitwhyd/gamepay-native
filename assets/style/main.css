@@ -316,8 +316,12 @@ section#banner .slides-item img {
   padding-bottom: 15px;
   margin-bottom: 44px;
   display: flex;
-  overflow-x: scroll;
-  width: 700px;
+}
+@media screen and (max-width: 768px) {
+  #main-content section#navigate-topup .scrollbar-wrapper {
+    overflow-x: scroll;
+    width: 700px;
+  }
 }
 #main-content section#navigate-topup .scrollbar-wrapper .scrollbar-item a {
   text-decoration: none;
