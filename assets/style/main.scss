@@ -149,7 +149,7 @@ section#banner {
 
 	@media screen and (max-width: 700px) {
 		height: fit-content;
-		padding: 50px 20px;
+		padding: 1rem;
 	}
 
 	.button-prev,
@@ -579,10 +579,6 @@ section#banner {
 					@media screen and (max-width: 900px) {
 						grid-template-columns: repeat(2, 1fr);
 					}
-
-					@media screen and (max-width: 435px) {
-						grid-template-columns: repeat(1, 1fr);
-					}
 				}
 
 				input {
@@ -953,16 +949,16 @@ footer {
 .desktop-item {
 	display: block;
 
-	@media screen and (max-width: 435px) {
+	@media screen and (max-width: 768px) {
 		display: none;
 	}
 }
 
 .mobile-item {
-	display: none;
+	display: block;
 
-	@media screen and (max-width: 768px) {
-		display: block;
+	@media screen and (min-width: 768px) {
+		display: none;
 	}
 }
 
