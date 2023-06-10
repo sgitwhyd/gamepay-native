@@ -571,6 +571,35 @@ section#banner {
 					color: white;
 				}
 
+				.choosed-item {
+					display: flex;
+					padding-top: 20px;
+					gap: 1rem;
+
+					@media screen and (min-width: 768px) {
+						display: none;
+					}
+
+					img {
+						aspect-ratio: 1/1;
+						width: 4rem;
+						height: 4rem;
+						border-radius: 6px;
+					}
+
+					.choosed-item-info {
+						font-size: 0.75rem;
+						font-weight: 600;
+						.title {
+							color: white;
+						}
+
+						.price {
+							color: $secondary-color;
+						}
+					}
+				}
+
 				.item-checkout-wrapper {
 					display: grid;
 					grid-template-columns: repeat(3, 1fr);
@@ -738,22 +767,77 @@ footer {
 // checkout page
 .top-bg {
 	background: linear-gradient(180deg, rgba(0, 31, 72, 0) 0%, #006eff 100%);
-	height: 305px;
 	position: relative;
 	margin-bottom: 44px;
+	height: 250px;
+	overflow: hidden;
+	z-index: -1;
 
-	img {
-		position: absolute;
-		width: 281px;
-		border-radius: 12px;
-		left: 170px;
-		bottom: -25px;
+	@media screen and (min-width: 768px) {
+		height: 300px;
+	}
+}
 
-		@media screen and (max-width: 768px) {
-			width: 100%;
-			max-width: 15rem;
+.services-container {
+	z-index: 99;
+	display: flex;
+	align-items: end;
+	gap: 1rem;
+	padding: 0 20px;
+	margin-bottom: 50px;
+	margin-top: -145px;
 
-			left: 30px;
+	@media screen and (min-width: 760px) {
+		margin-top: -240px;
+		padding: 0 100px;
+	}
+
+	.service-img-wrapper {
+		perspective: 25em;
+		img {
+			width: 15rem;
+			border-radius: 12px;
+
+			transform: rotateY(20deg) rotateX(-4deg) !important;
+			transform-origin: left center;
+			object-fit: cover;
+			aspect-ratio: 1/1;
+
+			@media screen and (max-width: 500px) {
+				width: 100%;
+				max-width: 8rem;
+				left: 30px;
+			}
+		}
+	}
+
+	.info-services-container {
+		color: #c3c9cc;
+		margin-bottom: 40px;
+
+		@media screen and (min-width: 760px) {
+			margin-bottom: 70px;
+		}
+
+		.services-title {
+			font-weight: 600;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			font-size: 1.5rem;
+
+			@media screen and (max-width: 500px) {
+				font-size: 1rem;
+			}
+		}
+
+		.services-brand {
+			font-weight: 400;
+			font-size: 1rem;
+			color: #9da5ab;
+
+			@media screen and (max-width: 500px) {
+				font-size: 0.75rem;
+			}
 		}
 	}
 }
@@ -930,7 +1014,7 @@ footer {
 
 		.accordion-footer {
 			height: 30px;
-			background: #003d6a;
+			background: #9da5ab;
 			border-radius: 0px 0px 6px 6px;
 			padding: 8px 8px 8px 0;
 
@@ -971,6 +1055,14 @@ footer {
 
 .offcanvas {
 	background-color: $primary-color;
+
+	@media screen and (min-width: 1024zpx) {
+		display: none;
+	}
+
+	&.offcanvas-start {
+		width: 320px;
+	}
 }
 
 .offcanvas-header {
@@ -1040,5 +1132,101 @@ footer {
 				border: 2px solid $bg-color;
 			}
 		}
+	}
+}
+
+.modal-backdrop {
+	background-color: transparent;
+	backdrop-filter: blur(4px);
+
+	&.show {
+		opacity: unset;
+	}
+
+	&.fade {
+		opacity: unset;
+	}
+}
+
+$bubble-count: 50;
+$sway-type: "sway-left-to-right", "sway-right-to-left";
+
+@function random_range($min, $max) {
+	$rand: random();
+	$random_range: $min + floor($rand * (($max - $min) + 1));
+	@return $random_range;
+}
+
+@function sample($list) {
+	@return nth($list, random(length($list)));
+}
+
+.bubbles {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.bubble {
+	position: absolute;
+	left: var(--bubble-left-offset);
+	bottom: -75%;
+	display: block;
+	width: var(--bubble-radius);
+	height: var(--bubble-radius);
+	border-radius: 50%;
+	animation: float-up var(--bubble-float-duration) var(--bubble-float-delay)
+		ease-in infinite;
+
+	&::before {
+		position: absolute;
+		content: "";
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: hsla(183, 94%, 76%, 0.3);
+		border-radius: inherit;
+		animation: var(--bubble-sway-type) var(--bubble-sway-duration)
+			var(--bubble-sway-delay) ease-in-out alternate infinite;
+	}
+
+	@for $i from 0 through $bubble-count {
+		&:nth-child(#{$i}) {
+			--bubble-left-offset: #{random_range(0vw, 100vw)};
+			--bubble-radius: #{random_range(1vw, 10vw)};
+			--bubble-float-duration: #{random_range(6s, 12s)};
+			--bubble-sway-duration: #{random_range(4s, 6s)};
+			--bubble-float-delay: #{random_range(0s, 4s)};
+			--bubble-sway-delay: #{random_range(0s, 4s)};
+			--bubble-sway-type: #{sample($sway-type)};
+		}
+	}
+}
+
+@keyframes float-up {
+	to {
+		transform: translateY(-175vh);
+	}
+}
+
+@keyframes sway-left-to-right {
+	from {
+		transform: translateX(-100%);
+	}
+
+	to {
+		transform: translateX(100%);
+	}
+}
+
+@keyframes sway-right-to-left {
+	from {
+		transform: translateX(100%);
+	}
+
+	to {
+		transform: translateX(-100%);
 	}
 }
