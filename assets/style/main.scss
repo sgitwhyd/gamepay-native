@@ -787,7 +787,7 @@ footer {
 	margin-bottom: 50px;
 	margin-top: -145px;
 
-	@media screen and (min-width: 760px) {
+	@media screen and (min-width: 768px) {
 		margin-top: -240px;
 		padding: 0 100px;
 	}
@@ -803,7 +803,7 @@ footer {
 			object-fit: cover;
 			aspect-ratio: 1/1;
 
-			@media screen and (max-width: 500px) {
+			@media screen and (max-width: 768px) {
 				width: 100%;
 				max-width: 8rem;
 				left: 30px;
@@ -815,7 +815,7 @@ footer {
 		color: #c3c9cc;
 		margin-bottom: 40px;
 
-		@media screen and (min-width: 760px) {
+		@media screen and (min-width: 768px) {
 			margin-bottom: 70px;
 		}
 
