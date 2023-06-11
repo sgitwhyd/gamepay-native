@@ -579,6 +579,7 @@ section#banner {
 
 				.choosed-item {
 					display: flex;
+					align-items: center;
 					padding-top: 20px;
 					gap: 1rem;
 
@@ -602,6 +603,12 @@ section#banner {
 
 						.price {
 							color: $secondary-color;
+						}
+
+						.payment {
+							font-size: 0.75rem;
+							font-style: italic;
+							color: white;
 						}
 					}
 				}
@@ -651,7 +658,8 @@ section#banner {
 					padding: 15px 10px;
 					cursor: pointer;
 
-					&:hover {
+					&:hover,
+					&.active {
 						background: #ffff;
 						transition: 0.1s ease-in-out all 0.1s;
 					}
@@ -855,6 +863,10 @@ footer {
 	background: $secondary-main-color;
 	border-radius: 17px;
 
+	@media screen and (max-width: 768px) {
+		width: 100%;
+	}
+
 	.modal-header {
 		margin-top: 32px;
 		color: white;
@@ -876,6 +888,10 @@ footer {
 			text-align: center;
 			font-weight: 400;
 			font-size: 20px;
+
+			@media screen and (max-width: 500px) {
+				font-size: 14px;
+			}
 		}
 	}
 
@@ -886,6 +902,10 @@ footer {
 		height: 317px;
 		padding: 28px 31px;
 
+		@media screen and (max-width: 500px) {
+			height: fit-content;
+		}
+
 		table {
 			color: white;
 			width: 100%;
@@ -894,11 +914,27 @@ footer {
 				padding-bottom: 14px;
 				font-weight: 400;
 				font-size: 20px;
+
+				@media screen and (max-width: 768px) {
+					font-size: 16px;
+				}
+
+				@media screen and (max-width: 500px) {
+					font-size: 12px;
+				}
 			}
 
 			td.table__title {
 				font-weight: 700;
 				font-size: 20px;
+
+				@media screen and (max-width: 768px) {
+					font-size: 16px;
+				}
+
+				@media screen and (max-width: 500px) {
+					font-size: 12px;
+				}
 			}
 		}
 	}
@@ -916,6 +952,10 @@ footer {
 			font-weight: 700;
 			font-size: 20px;
 			padding: 14px 0;
+
+			@media screen and (max-width: 500px) {
+				font-size: 12px;
+			}
 
 			&.btn-cancel {
 				background: #002c58;
@@ -1006,7 +1046,7 @@ footer {
 						margin-bottom: 11px;
 					}
 
-					.price {
+					.payment-price {
 						font-weight: 700;
 						font-size: 12px;
 					}
