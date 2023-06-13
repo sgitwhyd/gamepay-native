@@ -239,6 +239,12 @@ section#banner {
 			outline: none;
 			border: 3px solid transparent;
 
+			img {
+				aspect-ratio: 4/6;
+				object-fit: cover;
+				width: 100%;
+			}
+
 			.img-text {
 				position: absolute;
 				width: 100%;
